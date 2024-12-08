@@ -98,7 +98,6 @@ fn can_add_to_update(page: &i32, seen: &HashMap<i32, bool>,  rules: &HashMap<i32
 fn order_update(update: &Vec<i32>, rules: &HashMap<i32, HashSet<i32>>) -> Result<Vec<i32>, Box<dyn Error>> {
     let mut q: VecDeque<i32> = VecDeque::new();
     let mut seen: HashMap<i32, bool> = HashMap::new();
-    println!("Ordering: {:?}", update);
     for page in update {
         seen.insert(*page, false);
         q.push_back(*page);
